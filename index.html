@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>森耀融資｜救援金1–10萬・加LINE立即辦</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="森耀融資，專做小額救急與代償整合，線上加LINE就能辦，10分鐘回覆，合法保密。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #0f3f35;
+      --green2: #135448;
+      --gold: #d6a44b;
+      --gray: #f3f5f7;
+      --container: min(1280px, 100vw - 4rem);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #fff;
+      color: #0f172a;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* navbar */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(15,63,53,.92);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .7rem clamp(1rem,4vw,3.2rem);
+      z-index: 80;
+    }
+    .nav-left { display: flex; gap: .7rem; align-items: center; }
+.logo-ball {
+  width: 34px;
+  height: 34px;
+  background: url("images/logo.png") center/cover no-repeat; /* 你的圖片路徑 */
+  border-radius: 999px;
+}
+
+    .brand { color: #fff; font-weight: 700; }
+    .nav-links a {
+      color: rgba(255,255,255,.85);
+      font-size: .83rem;
+      margin-left: .6rem;
+      padding: .2rem .6rem;
+      border-radius: 999px;
+    }
+    .nav-links a:hover { background: rgba(255,255,255,.08); }
+    .nav-line {
+      background: linear-gradient(135deg,#1df07e 0%, #06c755 95%);
+      color: #073718;
+      font-weight: 700;
+      padding: .55rem 1.1rem;
+      border-radius: .85rem;
+      font-size: .75rem;
+      display: flex; gap: .35rem; align-items: center;
+      box-shadow: 0 12px 28px rgba(6,199,85,.3);
+    }
+
+    /* scroll reveal base */
+    .reveal { opacity: 0; transform: translateY(25px); }
+    .reveal.show { opacity: 1; transform: translateY(0); transition: .55s ease-out; }
+
+    /* 1. hero */
+    .hero-block {
+      background: radial-gradient(circle at 10% 10%, #1a7463 0%, #0f3f35 50%, #0b2d27 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 5.6rem 0 4rem;
+      color: #fff;
+    }
+    .hero-inner {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr .55fr;
+      gap: 2.9rem;
+      align-items: center;
+    }
+    .hero-label {
+      display: inline-flex;
+      gap: .4rem;
+      background: rgba(243,222,174,.1);
+      border: 1px solid rgba(243,222,174,.4);
+      padding: .4rem .8rem;
+      border-radius: 999px;
+      font-size: .78rem;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: clamp(2.8rem, 5vw, 3.5rem); /* 放大 */
+      line-height: 1.02;
+      margin-bottom: .6rem;
+    }
+    .subtitle {
+      font-size: .95rem;
+      color: rgba(255,255,255,.75);
+      margin-bottom: 1.35rem;
+      max-width: 640px;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: .9rem;
+      flex-wrap: wrap;
+    }
+    .btn-line {
+      background: linear-gradient(135deg,#1df07e 0%, #06c755 95%);
+      color: #073718;
+      font-weight: 800;
+      padding: 1rem 1.5rem; /* 放大 */
+      border-radius: 1rem;
+      font-size: .95rem;
+      display: inline-flex;
+      gap: .45rem;
+      align-items: center;
+      box-shadow: 0 12px 28px rgba(6,199,85,.3);
+      animation: heroBtn 1.8s ease-in-out infinite;
+    }
+    @keyframes heroBtn {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(2px); }
+    }
+    .btn-ghost {
+      border: 1px solid rgba(243,222,174,.25);
+      background: rgba(0,0,0,.12);
+      padding: .9rem 1.4rem;
+      border-radius: 1rem;
+      color: #fff;
+      font-size: .9rem;
+    }
+
+    /* text rotator */
+    .hero-rotator {
+      position: relative;
+      height: 32px;
+      margin-bottom: 1.1rem;
+    }
+    .hero-rotator span {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      opacity: 0;
+      transition: opacity .4s ease;
+      white-space: nowrap;
+    }
+    .hero-rotator span.active { opacity: 1; }
+    .rotator-pill {
+      background: rgba(243,222,174,.16);
+      border: 1px solid rgba(243,222,174,.1);
+      padding: .2rem .55rem;
+      border-radius: .55rem;
+      font-size: .65rem;
+    }
+
+    /* hero right cards */
+    .hero-right {
+      display: grid;
+      gap: .75rem;
+    }
+    .info-pill {
+      display: flex;
+      gap: .6rem;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 1.2rem;
+      padding: .8rem .9rem;
+      align-items: center;
+      backdrop-filter: blur(5px);
+      min-width: 290px;
+      position: relative;
+      overflow: hidden;
+      transition: transform .2s;
+    }
+    .info-pill:hover { transform: translateY(-2px); }
+    .pill-icon {
+      width: 38px; height: 38px;
+      background: rgba(243,222,174,.17);
+      border-radius: 999px;
+      display: grid; place-items: center;
+      font-weight: 700;
+    }
+    .pill-title { font-size: .83rem; margin-bottom: .08rem; }
+    .pill-text { font-size: .7rem; color: rgba(255,255,255,.6); }
+    .info-pill.pulse { animation: pillPulse 2.4s ease-in-out infinite; }
+    @keyframes pillPulse {
+      0%,100% { box-shadow: 0 0 0 rgba(243,222,174,0); }
+      50% { box-shadow: 0 0 16px rgba(243,222,174,.32); }
+    }
+    .info-pill.shimmer::after {
+      content: "";
+      position: absolute;
+      top: 0; left: -70%;
+      width: 45%; height: 100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(243,222,174,.35) 50%, rgba(255,255,255,0) 100%);
+      transform: skewX(-15deg);
+      animation: shimmer 3.5s ease-in-out infinite;
+    }
+    @keyframes shimmer {
+      0% { left: -70%; }
+      100% { left: 130%; }
+    }
+
+    /* 2. plans - 灰底 */
+    .plans-block {
+      width: 100%;
+      background: #f3f5f7;
+      padding: 4rem 0 4.1rem;
+    }
+    .plans-inner {
+      width: var(--container);
+      margin: 0 auto;
+    }
+    .plans-title { text-align: center; margin-bottom: 2.5rem; }
+    .plans-title h2 { font-size: 2.1rem; margin-bottom: .55rem; color: #0f172a; }
+    .plans-title p { color: #6b7280; font-size: .9rem; }
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(4,minmax(0,1fr));
+      gap: 1.25rem;
+    }
+    .plan-card {
+      background: #fff;
+      border-radius: 1.3rem;
+      border: 1px solid rgba(15,63,53,.03);
+      padding: 1.55rem 1.25rem 1.25rem;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+      box-shadow: 0 14px 38px rgba(15,63,53,.03);
+      transition: transform .2s;
+    }
+    .plan-card:hover { transform: translateY(-4px); }
+    .plan-card h3 { font-size: 1.6rem; margin-bottom: .15rem; color: #0f3f35; }
+    .plan-sub { font-weight: 650; }
+    .plan-list {
+      margin: .5rem 0 .85rem;
+      padding-left: 1.1rem;
+      color: #4b5563;
+      font-size: .8rem;
+    }
+    .plan-btn {
+      margin-top: auto;
+      background: #0f3f35;
+      color: #fff;
+      border: none;
+      border-radius: .7rem;
+      padding: .65rem .85rem; /* 放大 */
+      font-weight: 650;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .35rem;
+      font-size: .82rem;
+    }
+    .plan-card.hot {
+      border: 1.5px solid rgba(214,164,75,.9);
+      background: #fffef9;
+      box-shadow: 0 16px 36px rgba(214,164,75,.12);
+      position: relative;
+    }
+    .hot-tag {
+      position: absolute;
+      top: -14px; left: 22px;
+      background: #d6a44b;
+      color: #fff;
+      font-size: .7rem;
+      padding: .25rem .6rem;
+      border-radius: .5rem;
+      display: flex; gap: .28rem; align-items: center;
+    }
+
+    /* 3. why - 白底 + emoji */
+    .why-block {
+      width: 100%;
+      background: #fff;
+      padding: 3.4rem 0 4rem;
+    }
+    .why-inner {
+      width: var(--container);
+      margin: 0 auto;
+    }
+    .why-inner h2 { font-size: 1.9rem; margin-bottom: .5rem; }
+    .why-inner p { color: #6b7280; }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .why-card {
+      background: #fff;
+      border-radius: 1.05rem;
+      border: 1px solid rgba(15,63,53,.03);
+      padding: 1.05rem .95rem .95rem;
+      display: flex;
+      gap: .6rem;
+      align-items: flex-start;
+      box-shadow: 0 10px 28px rgba(15,63,53,.03);
+      transition: transform .2s;
+    }
+    .why-card:hover { transform: translateY(-3px); }
+    .why-icon {
+      width: 40px; height: 40px;
+      border-radius: 999px;
+      background: #f3f5f7;
+      display: grid; place-items: center;
+      font-size: 1.3rem;
+      animation: emojiFloat 3s ease-in-out infinite;
+    }
+    @keyframes emojiFloat {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    .why-body h4 { margin: 0 0 .3rem; }
+    .why-body p { margin: 0; color: #6b7280; font-size: .78rem; }
+
+    /* float line */
+    .floating-line {
+      position: fixed;
+      bottom: 16px; right: 16px;
+      background: linear-gradient(135deg,#1df07e 0%, #06c755 95%);
+      color: #073718;
+      padding: .7rem 1rem;
+      border-radius: 999px;
+      font-weight: 700;
+      display: flex; gap: .35rem; align-items: center;
+      box-shadow: 0 12px 28px rgba(6,199,85,.3);
+      z-index: 90;
+      animation: float 2.5s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(3px); }
+    }
+
+    .footer {
+      text-align: center;
+      font-size: .7rem;
+      color: #9ca3af;
+      padding: 1.3rem 1rem 2.4rem;
+      background: #fff;
+    }
+
+    /* RWD */
+    @media (max-width: 1024px) {
+      .hero-block { min-height: auto; padding-top: 4.8rem; }
+      .hero-inner { width: min(100%, 100vw - 1.7rem); grid-template-columns: 1fr; }
+      .plans-inner, .why-inner { width: min(100%, 100vw - 1.7rem); }
+      .hero-buttons { flex-direction: column; }
+      .btn-line, .btn-ghost { width: 100%; justify-content: center; }
+    }
+    @media (max-width: 900px) {
+      .plans-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    }
+    @media (max-width: 600px) {
+      .plans-grid { grid-template-columns: 1fr; }
+      .info-pill { min-width: auto; }
+      .hero-rotator span { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-left">
+      <div class="logo-ball"></div>
+      <div class="brand">森耀融資</div>
+      <div class="nav-links">
+        <a href="#plans">方案</a>
+        <a href="#why">特色</a>
+      </div>
+    </div>
+    <a href="https://line.me/R/ti/p/@yourlineid" class="nav-line">加 LINE 諮詢</a>
+  </nav>
+
+  <!-- hero -->
+  <section class="hero-block">
+    <div class="hero-inner">
+      <div class="reveal">
+        <div class="hero-label">合法融資・全程保密・專人跟進</div>
+        <h1>小額救急也能安心借</h1>
+
+        <div class="hero-rotator" id="rotator">
+          <span class="active"><span class="rotator-pill">森耀融資</span> 彈性試算，幫你找到過得了的方案</span>
+          <span><span class="rotator-pill">救援金 1–10 萬</span> 線上申辦、快速撥款</span>
+          <span><span class="rotator-pill">LINE 一對一</span> 不想填表也可以辦</span>
+        </div>
+
+        <p class="subtitle">不想填表單？直接點 LINE，說你要的金額、週期，我們幫你配符合你收入的方案。</p>
+        <div class="hero-buttons">
+          <a href="https://line.me/R/ti/p/@yourlineid" class="btn-line">立即加 LINE</a>
+          <a href="#plans" class="btn-ghost">看看現在能借多少</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="info-pill pulse reveal">
+          <div class="pill-icon">⏱</div>
+          <div>
+            <div class="pill-title">10分鐘快速審核</div>
+            <div class="pill-text">線上LINE填資料即可</div>
+          </div>
+        </div>
+        <div class="info-pill shimmer reveal" style="transition-delay:.1s">
+          <div class="pill-icon">🛡</div>
+          <div>
+            <div class="pill-title">合法安全保密</div>
+            <div class="pill-text">不會亂透漏你的資料</div>
+          </div>
+        </div>
+        <div class="info-pill reveal" style="transition-delay:.2s">
+          <div class="pill-icon">🤝</div>
+          <div>
+            <div class="pill-title">專人一對一服務</div>
+            <div class="pill-text">依你的工作&負債配方案</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- plans -->
+  <section class="plans-block" id="plans">
+    <div class="plans-inner">
+      <div class="plans-title reveal">
+        <h2>救援金方案選擇</h2>
+        <p>四種額度方案，滿足不同資金需求｜線上加LINE申辦・快速便利</p>
+      </div>
+      <div class="plans-grid">
+        <div class="plan-card reveal">
+          <h3>1萬</h3>
+          <div class="plan-sub">小額週轉首選</div>
+          <ul class="plan-list">
+            <li>適合短期資金需求</li>
+            <li>彈性還款</li>
+            <li>免保人</li>
+          </ul>
+          <a href="https://line.me/R/ti/p/@yourlineid" class="plan-btn">立即申辦 →</a>
+        </div>
+        <div class="plan-card hot reveal" style="transition-delay:.08s">
+          <div class="hot-tag">🔥 最熱門</div>
+          <h3>3萬</h3>
+          <div class="plan-sub">靈活救急快速撥款</div>
+          <ul class="plan-list">
+            <li>中等額度資金</li>
+            <li>快速撥款</li>
+            <li>利率優惠</li>
+            <li>流程簡便</li>
+          </ul>
+          <a href="https://line.me/R/ti/p/@yourlineid" class="plan-btn">LINE 申辦 →</a>
+        </div>
+        <div class="plan-card reveal" style="transition-delay:.15s">
+          <h3>5萬</h3>
+          <div class="plan-sub">安全穩定，高過件率</div>
+          <ul class="plan-list">
+            <li>適合中長期資金規劃</li>
+            <li>高過件率</li>
+            <li>專人服務</li>
+          </ul>
+          <a href="https://line.me/R/ti/p/@yourlineid" class="plan-btn">立即申辦 →</a>
+        </div>
+        <div class="plan-card reveal" style="transition-delay:.22s">
+          <h3>10萬</h3>
+          <div class="plan-sub">彈性還款，自由運用</div>
+          <ul class="plan-list">
+            <li>額度較高</li>
+            <li>資金用途更彈性</li>
+            <li>適合整合帳款</li>
+          </ul>
+          <a href="https://line.me/R/ti/p/@yourlineid" class="plan-btn">立即申辦 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- why -->
+  <section class="why-block" id="why">
+    <div class="why-inner">
+      <div class="reveal">
+        <h2>為什麼很多人改用 LINE 申辦？</h2>
+        <p>因為不用填一堆網址表、也不用等電話突然打來，直接在 LINE 裡說清楚最省事。</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-icon">📱</div>
+          <div class="why-body">
+            <h4>線上就能開始</h4>
+            <p>直接傳資料、傳身份證影本都可以，不用跑門市。</p>
+          </div>
+        </div>
+        <div class="why-card reveal" style="transition-delay:.08s">
+          <div class="why-icon">⚡</div>
+          <div class="why-body">
+            <h4>回覆時間短</h4>
+            <p>營業時間內通常 10–30 分鐘能給初步答案。</p>
+          </div>
+        </div>
+        <div class="why-card reveal" style="transition-delay:.15s">
+          <div class="why-icon">🛡️</div>
+          <div class="why-body">
+            <h4>保密不打擾</h4>
+            <p>先以 LINE 溝通，不會先打去你的公司或家人。</p>
+          </div>
+        </div>
+        <div class="why-card reveal" style="transition-delay:.22s">
+          <div class="why-icon">🤝</div>
+          <div class="why-body">
+            <h4>方案可談</h4>
+            <p>你的月收入、負債多少都能說，我們幫你配有機會過的方案。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- floating line -->
+  <a href="https://line.me/R/ti/p/@yourlineid" class="floating-line">加 LINE 立即諮詢 →</a>
+
+  <footer class="footer">
+    © <span id="year"></span> 森耀融資 – 示意版一頁式網站．實際貸款條件依專員回覆為準
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // rotator
+    const messages = document.querySelectorAll('#rotator span');
+    let current = 0;
+    setInterval(() => {
+      messages[current].classList.remove('active');
+      current = (current + 1) % messages.length;
+      messages[current].classList.add('active');
+    }, 3500);
+
+    // scroll reveal
+    const reveals = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add("show");
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => io.observe(el));
+  </script>
+</body>
+</html>

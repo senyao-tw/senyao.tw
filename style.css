@@ -1,0 +1,60 @@
+body {
+  font-family: sans-serif;
+  background-color: #0f3c2e;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+header, section, footer {
+  padding: 2rem;
+  text-align: center;
+}
+.cta {
+  display: inline-block;
+  background-color: #ffd700;
+  color: #0f3c2e;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.plans {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.plan {
+  background-color: white;
+  color: #0f3c2e;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 200px;
+}
+button {
+  background-color: #0f3c2e;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.guarantee ul {
+  list-style: none;
+  padding: 0;
+}
+.testimonials blockquote {
+  background-color: white;
+  color: #0f3c2e;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 500px;
+}
+@media (max-width: 768px) {
+  .plans {
+    flex-direction: column;
+    align-items: center;
+  }
+}
